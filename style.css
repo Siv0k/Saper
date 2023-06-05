@@ -1,6 +1,3 @@
-
-
-
 button {
     background-color: #ffffff;
     cursor: pointer;
@@ -14,5 +11,6 @@ button {
 
 button:hover {
     background-color: #000000;
+    color: #ffffff;
 }
 

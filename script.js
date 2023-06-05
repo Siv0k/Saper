@@ -21,4 +21,5 @@ function GetBoardSize() {
     }
 }
 
+document.getElementById('Sumbit').addEventListener('click', GetBoardSize);
 
