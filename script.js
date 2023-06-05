@@ -1,19 +1,24 @@
 let gameBoard = [];
 function GetBoardSize() {
+    let boardSizeHight = document.getElementById('GameBoardHight').value;
+    let boardSizeWidht = document.getElementById('GameBoardWidht').value;
     if (gameBoard.length != 0) {
         let buttons = document.querySelectorAll('div > button');
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].remove();
         }
         gameBoard.length = 0;
-        let boardSize = document.querySelector('input').value;
-        gameBoard.length = boardSize;
+        gameBoard.length = (boardSizeHight * boardSizeWidht);
     } else {
-        let boardSize = document.querySelector('input').value;
-        gameBoard.length = boardSize;
+        gameBoard.length = (boardSizeHight * boardSizeWidht);
     }
     for (let i = 0; i < gameBoard.length; i++) {
-        GameBoard.insertAdjacentHTML('beforeend', '<button></button>');
+        
+        if (i % boardSizeWidht == 0) {
+            document.getElementById('GameBoard').insertAdjacentHTML('beforeend', '<br>');
+        }
+        document.getElementById('GameBoard').insertAdjacentHTML('beforeend', '<button></button>');
     }
 }
+
 
