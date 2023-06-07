@@ -1,4 +1,5 @@
 let gameBoard = [];
+
 function GetBoardSize() {
     let boardSizeHight = document.getElementById('GameBoardHight').value;
     let boardSizeWidht = document.getElementById('GameBoardWidht').value;
@@ -13,13 +14,17 @@ function GetBoardSize() {
         gameBoard.length = (boardSizeHight * boardSizeWidht);
     }
     for (let i = 0; i < gameBoard.length; i++) {
-        
+        const elem = {
+            button: document.createElement('button'),
+            mina_korovya: true,
+        }
         if (i % boardSizeWidht == 0) {
             document.getElementById('GameBoard').insertAdjacentHTML('beforeend', '<br>');
-        }
-        document.getElementById('GameBoard').insertAdjacentHTML('beforeend', '<button></button>');
+        } 
+        gameBoard[i] = elem;
+        document.getElementById('GameBoard').append(gameBoard[i].button);
+        console.log(gameBoard[i].button);
     }
 }
 
 document.getElementById('Sumbit').addEventListener('click', GetBoardSize);
-
