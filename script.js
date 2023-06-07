@@ -5,8 +5,12 @@ function GetBoardSize() {
     let boardSizeWidht = document.getElementById('GameBoardWidht').value;
     if (gameBoard.length != 0) {
         let buttons = document.querySelectorAll('div > button');
+        let br = document.querySelectorAll('div > br');
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].remove();
+        }
+        for (let i = 0; i < br.length; i++) {
+            br[i].remove();
         }
         gameBoard.length = 0;
         gameBoard.length = (boardSizeHight * boardSizeWidht);
@@ -16,7 +20,6 @@ function GetBoardSize() {
 
     let totalMines = GetCountMina(gameBoard.length);
     let mines = MinaPosition(totalMines, gameBoard.length);
-    console.log(MinaPosition(totalMines, gameBoard.length));
     for (let i = 0; i < gameBoard.length; i++) {
         const elem = {
             button: document.createElement('button'),
