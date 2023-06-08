@@ -6,12 +6,8 @@ function GetBoardSize() {
     if (gameBoard.length != 0) {
         let buttons = document.querySelectorAll('div > button');
         let br = document.querySelectorAll('div > br');
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].remove();
-        }
-        for (let i = 0; i < br.length; i++) {
-            br[i].remove();
-        }
+        buttons.forEach(button => button.remove());
+        br.forEach(enter => enter.remove());
         gameBoard.length = 0;
         gameBoard.length = (boardSizeHight * boardSizeWidht);
     } else {
